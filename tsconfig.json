@@ -1,12 +1,15 @@
 {
-  "extends": "@kot-shrodingera-team/config",
   "compilerOptions": {
-    "types": [
-      "@kot-shrodingera-team/config"
-    ]
+      "target": "esnext", // Использование всех новых фич ES
+      "module": "esnext", // Генерирование ESM (необходимо для Rollup)
+      "noImplicitAny": true, // Появление ошибки, при неявном использовании any
+      "moduleResolution": "node", // Использование нодовского нахождения модулей (необходимо для Rollup)
+      "resolveJsonModule": true // Разрешение импортирования значений из json файлов (получение version из package.json)
   },
   "include": [
-    "./src/**/*.ts",
-    "./node_modules/@kot-shrodingera-team/config/**/*.ts"
+    "./node_modules/@kot-shrodingera-team/worker-declaration/*.ts",
+    "./node_modules/@kot-shrodingera-team/germes-utils/*.ts",
+    "./node_modules/@kot-shrodingera-team/germes-generators/**/*.ts",
+    "./src/**/*.ts"
   ]
 }

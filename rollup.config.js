@@ -1,10 +1,11 @@
-import config from './node_modules/@kot-shrodingera-team/config/rollup.config';
-import bookmakerName from './bookmakerName';
+import typescript from '@rollup/plugin-typescript';
+import json from '@rollup/plugin-json';
 
 export default {
-  ...config,
   input: './src/index.ts',
   output: {
-    file: `./dist/${bookmakerName}.js`,
+    format: 'es',
+    file: './dist/index.js',
   },
+  plugins: [typescript(), json()],
 };
